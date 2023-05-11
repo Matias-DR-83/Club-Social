@@ -1,0 +1,253 @@
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background: rgb(230,230,230);
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+.contenedor{
+
+
+    width: 90%;
+    max-width: 1200px; /*ancho máximo de la página*/
+    margin: 20px auto; /*auto permite centrar nuestra página en forma horizontal*/
+    display: grid;
+    gap: 20px; /*nos ahorramos tenes que poner márgenes entre los elementos*/
+
+    /*cantidad de columnas*/
+    grid-template-columns: repeat(4,1fr);
+
+    /* filas: nav, header, contenido, footer*/
+    grid-template-rows: auto;
+
+    grid-template-areas: "encabezado encabezado encabezado encabezado"
+                         "nav nav nav nav"
+                         "contenido contenido contenido contenido"
+                         "pie pie pie pie";
+
+
+}
+
+
+.contenedor > div,
+.contenedor .nav,
+.contenedor .encabezado,
+.contenedor .contenido,
+.contenedor .pie {
+    padding: 1rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: -5px 2px 20px gray;
+    
+}
+
+
+/* ---- estilo header ---- */
+.contenedor .encabezado{
+    background: darkblue;
+    color: #fff;
+    font-family: kanit;
+    font-weight: 900;
+    font-size:xx-large;
+    text-align: center;
+    grid-area: encabezado;
+    display: flex;
+}
+
+.contenedor .encabezado .logo{
+    width: 8%;
+    display: flex;
+    align-items: center;
+
+}
+
+/* ----- estilo nav ---- */
+.contenedor .nav{
+    background: darkblue;
+    color: #fff;
+    grid-area: nav;
+
+    display: inline;
+    text-align: center;
+}
+
+
+
+/* --- estilo de lista ---- */
+
+.contenedor .nav ul li{
+    display: inline;
+    font-weight: 600;
+    padding:  0.5rem;
+}
+.nav ul li:hover{
+    background: grey;
+}
+
+.contenedor .nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+
+
+
+
+/* ------------------- estilo de main  ------------------- */
+.contenedor .contenido{
+    background: #fff;
+    display: block;
+    grid-area: contenido;
+
+}
+
+.contenedor .contenido .articulo{
+    overflow: hidden;
+    margin: 0.5rem 1rem 2.5rem 1rem;
+    text-align: justify;
+    box-sizing: border-box;
+    display:  flex;
+    gap: 3%;
+}
+
+.contenedor .contenido .articulo .img_articulo{
+    width: 50%;
+    height: 100%;
+}
+.contenedor .contenido .articulo img{
+    object-fit: cover;
+    width: 100%;
+
+}    
+
+.contenedor .contenido .articulo .texto{
+    width: 50%;
+}
+
+.contenido .articulo iframe{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* ---------------- estilo footer ------------------*/
+
+.contenedor .pie{
+    background: darkblue;
+    color: #fff;
+    text-align: center;
+    grid-area: pie;
+}
+
+
+
+/* ------------------------------------- BREACKPOINTS -------------------------------------- */
+
+@media screen and (max-width: 768px){
+
+    *{
+        margin-bottom: 0.5rem;
+    }
+
+    .contenedor{
+        display: block;
+        /*2 columnas: contenido  */
+        grid-template-columns: repeat(2,1fr);
+
+        grid-template-areas: "encabezado encabezado"
+                             "nav nav"
+                             "articulo articulo"
+                             "pie pie";
+    }
+
+    .contenedor .nav{
+        display: flex;
+        justify-content: center;
+
+
+    }
+    
+    
+    /* -----*/ 
+
+    .contenedor .contenido .articulo{
+        width: 90%;
+        display: block;
+    }
+
+    .contenedor .contenido .articulo .img_articulo{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .contenedor .contenido .articulo .texto{
+        width: 100%;
+    }
+
+}
+
+
+
+/* ------ -------- BREAK 450 px-------------------*/
+
+@media screen and (max-width: 450px){
+
+    *{
+        margin-bottom: 0.5rem;
+    }
+
+    .contenedor{
+        display: block;
+
+
+        grid-template-areas:
+                             "encabezado"
+                             "nav"
+                             "contenido"
+                             "pie";
+    }
+
+    .contenedor .encabezado .logo{
+        display: none;
+    }
+
+    .contenedor .nav{
+        display: block;
+    }
+
+
+    .contenedor .nav ul li{
+        display: block;
+        text-align: center;
+
+    }
+
+
+    /* -----*/ 
+
+    .contenedor .contenido .articulo{
+        width: 90%;
+        display: block;
+    }
+
+    /* -- */
+    .contenedor .contenido .articulo .img_articulo{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .contenedor .contenido .articulo .texto{
+        width: 100%;
+    }
+
+}
