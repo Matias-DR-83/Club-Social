@@ -1,3 +1,5 @@
+/* importación de íconos de FlatIcon */
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
 
 *{
     margin: 0;
@@ -45,13 +47,13 @@ body{
     box-sizing: border-box;
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: -5px 2px 20px gray;
-
+    
 }
 
 
 /* ---- estilo header ---- */
 .contenedor .encabezado{
-    background: darkblue;
+    background: #0b2239;
     color: #fff;
     font-family: kanit;
     font-weight: 900;
@@ -70,7 +72,7 @@ body{
 
 /* ----- estilo nav ---- */
 .contenedor .nav{
-    background: darkblue;
+    background: #0b2239;
     color: #fff;
     grid-area: nav;
 
@@ -87,9 +89,6 @@ body{
     font-weight: 600;
     padding:  0.5rem;
 }
-.nav ul li:hover{
-    background: grey;
-}
 
 .contenedor .nav ul li a{
     text-decoration: none;
@@ -97,6 +96,10 @@ body{
     text-align: center;
 }
 
+.nav ul li:hover{
+    background: rgb(155, 133, 219);
+    
+}
 
 
 
@@ -105,54 +108,64 @@ body{
     background: #fff;
     display: block;
     grid-area: contenido;
-    gap: 5%;
-    padding: 3%;
 
 }
 
 .contenedor .contenido .articulo{
     overflow: hidden;
     margin: 0.5rem 1rem 2.5rem 1rem;
+    text-align: justify;
     box-sizing: border-box;
-    display: block;
-
+    display:  flex;
+    gap: 3%;
 }
 
 .contenedor .contenido .articulo .img_articulo{
-    display: flex;
-    justify-content: center;
-}
-.contenedor .contenido .articulo img{
-    width: 80%;
-   
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
 }
 
+
+.contenedor .contenido .articulo img{
+    object-fit: cover;
+    width: 100%;
+}    
+/* ---- aplico transformación con efecto zoom en las img ----*/
+.contenedor .contenido .articulo img:hover{
+    transition: all .5s ease-in;
+    transform: scale(1.1);
+}
+
+
 .contenedor .contenido .articulo .texto{
-    width: 80%;
-    text-align: justify;
-    padding: 3%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 50%;
 }
 
 .contenido .articulo iframe{
-    width: 60%;
+    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 
-/* ------ estilo footer --------*/
+
+/* ---------------- estilo footer ------------------*/
 
 .contenedor .pie{
-    background: darkblue;
+    background: #0b2239;
     color: #fff;
     text-align: center;
     grid-area: pie;
 }
-
-
+/* ---------- iconos --------- */
+.contenedor .pie ul i{
+    padding: 0.5rem;
+}
+.contenedor .pie ul i:hover{
+    cursor: pointer;
+}
 
 
 /* ------------------------------------- BREACKPOINTS -------------------------------------- */
@@ -180,25 +193,22 @@ body{
 
 
     }
-
-
-    /* -----*/
+    
+    
+    /* -----*/ 
 
     .contenedor .contenido .articulo{
         width: 90%;
         display: block;
     }
 
-    .contenedor .contenido .articulo img{
-        width: 95%;
-    }
-
-    .contenedor .contenido .articulo .texto{
-        width: 90%;
+    .contenedor .contenido .articulo .img_articulo{
+        width: 100%;
+        height: 100%;
     }
     
-    .contenedor .contenido .articulo iframe{
-        width: 80%;
+    .contenedor .contenido .articulo .texto{
+        width: 100%;
     }
 
 }
@@ -240,23 +250,21 @@ body{
     }
 
 
-    /* -----*/
+    /* -----*/ 
 
     .contenedor .contenido .articulo{
         width: 90%;
         display: block;
     }
 
-    .contenedor .contenido .articulo img{
+    /* -- */
+    .contenedor .contenido .articulo .img_articulo{
         width: 100%;
-
+        height: 100%;
     }
-
+    
     .contenedor .contenido .articulo .texto{
-        width: 90%;
-    }
-
-    .contenedor .contenido .articulo iframe{
         width: 100%;
     }
+
 }

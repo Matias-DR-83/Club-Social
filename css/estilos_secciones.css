@@ -1,3 +1,7 @@
+/* importación de íconos de FlatIcon */
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
+/* Importación de fuentes de google fonts */ 
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
 *{
     margin: 0;
@@ -45,13 +49,13 @@ body{
     box-sizing: border-box;
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: -5px 2px 20px gray;
-    
+
 }
 
 
 /* ---- estilo header ---- */
 .contenedor .encabezado{
-    background: darkblue;
+    background: #0b2239;
     color: #fff;
     font-family: kanit;
     font-weight: 900;
@@ -70,7 +74,7 @@ body{
 
 /* ----- estilo nav ---- */
 .contenedor .nav{
-    background: darkblue;
+    background: #0b2239;
     color: #fff;
     grid-area: nav;
 
@@ -105,51 +109,151 @@ body{
     background: #fff;
     display: block;
     grid-area: contenido;
+    gap: 5%;
+    padding: 3%;
 
 }
 
 .contenedor .contenido .articulo{
     overflow: hidden;
     margin: 0.5rem 1rem 2.5rem 1rem;
-    text-align: justify;
     box-sizing: border-box;
-    display:  flex;
-    gap: 3%;
+    display: block;
+
 }
 
 .contenedor .contenido .articulo .img_articulo{
-    width: 50%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 .contenedor .contenido .articulo img{
-    object-fit: cover;
-    width: 100%;
+    width: 80%;
 
-}    
+}
 
 .contenedor .contenido .articulo .texto{
-    width: 50%;
+    width: 80%;
+    text-align: justify;
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contenido .articulo iframe{
-    width: 50%;
+    width: 60%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 
+/* -------------------- estilo formulario ---------------*/
 
-/* ---------------- estilo footer ------------------*/
+.contenedor_form{  
+    width: 70%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 10px;  
+    padding: 2rem;
+    background-color: #fbfbfb; 
+    border-color: #5444ab; 
+    border-style: solid; 
+    border-width: 1px; 
+    box-sizing: border-box;
+    
+}
+
+.contenedor_form input{
+    background-color: #fbfbfb; 
+    width: 100%;
+    height: 2.2rem; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #5444ab; 
+    margin-top: 0.1rem;  
+    margin-bottom: 1.2rem; 
+    padding: 0.1rem 0.5rem;
+    box-sizing: border-box;
+}
+
+
+
+.contenedor_form button{
+    width: 100%;  
+    padding: 0.5rem ;
+    margin: 0.8rem auto;
+    text-transform: uppercase;
+    background-color: #5444ab; 
+    border-color: #5444ab; 
+    border-style: solid; 
+    border-radius: 10px;  
+    cursor: pointer;
+}
+
+.contenedor_form button p{
+    font-size: 0.8rem;
+    color: #fff; 
+}
+
+contenedor_form span{
+     color: #5444ab; 
+}
+
+.contenedor_form .aviso{
+    font-size: 0.8rem;  
+    color: #0e0e0e;  
+}
+
+.contenedor_form h1{
+    font-size: 2.5rem;  
+    text-align: center; 
+    padding-bottom: 1rem; 
+    color: #5444ab;
+ 
+}
+
+.contenedor_form h3{
+    font-size: 1.1rem; 
+    padding-bottom: 0.5rem;
+    color: #0e0e0e;   
+}
+
+.contenedor_form label{
+    font-size: 1rem; 
+    color: #0e0e0e; 
+}
+
+::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+
+
+.formulario input:focus{
+    outline:0;
+    border: 1px solid #cc8529;
+}
+
+
+/* ------ estilo footer --------*/
 
 .contenedor .pie{
-    background: darkblue;
+    background: #0b2239;
     color: #fff;
     text-align: center;
     grid-area: pie;
 }
 
+.contenedor .pie .iconos{
+    margin: 0.5rem;
+}
 
+.contenedor .pie ul i{
+    padding: 0.5rem;
+}
+.contenedor .pie ul i:hover{
+    cursor: pointer;
+}
 
 /* ------------------------------------- BREACKPOINTS -------------------------------------- */
 
@@ -176,29 +280,35 @@ body{
 
 
     }
-    
-    
-    /* -----*/ 
+
+
+    /* -----*/
 
     .contenedor .contenido .articulo{
         width: 90%;
         display: block;
     }
 
-    .contenedor .contenido .articulo .img_articulo{
-        width: 100%;
-        height: 100%;
-    }
-    
-    .contenedor .contenido .articulo .texto{
-        width: 100%;
+    .contenedor .contenido .articulo img{
+        width: 95%;
     }
 
+    .contenedor .contenido .articulo .texto{
+        width: 90%;
+    }
+    
+    .contenedor .contenido .articulo iframe{
+        width: 80%;
+    }
+
+    .contenedor .contenido .articulo .contenedor_form{
+        width: 90%;
+    }
 }
 
 
 
-/* ------ -------- BREAK 450 px-------------------*/
+/* --------------- -------- BREAK 450 px------------------------*/
 
 @media screen and (max-width: 450px){
 
@@ -233,21 +343,30 @@ body{
     }
 
 
-    /* -----*/ 
+    /* -----*/
 
     .contenedor .contenido .articulo{
         width: 90%;
         display: block;
     }
 
-    /* -- */
-    .contenedor .contenido .articulo .img_articulo{
+    .contenedor .contenido .articulo img{
         width: 100%;
-        height: 100%;
+
     }
-    
+
     .contenedor .contenido .articulo .texto{
+        width: 90%;
+    }
+
+    .contenedor .contenido .articulo iframe{
         width: 100%;
     }
 
+    .contenedor .contenido .articulo .contenedor_form{
+        width: 100%;
+    }
 }
+
+
+
