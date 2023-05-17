@@ -4,38 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--hoja de estilos-->    
+
+    <!--hoja de estilos-->
     <link rel="stylesheet" href="./css/estilos_secciones.css">
-    
+
     <!--tipografias-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,300;0,600;1,100;1,300;1,600&display=swap" rel="stylesheet">
-    
+
     <title>Club Social</title>
 
 </head>
 
 <body>
-    
+
     <div class="contenedor">
-    
-        
-        
+
+
+
         <header class="encabezado">
 
             <div class="logo">
                 <img src="./img/escudo.png" alt="escudo" width="50px">
             </div>
-            
-            
+
+
             <h3>CLUB SOCIAL Y BOCHÓFILO JESUS NAZARENO</h3>
-            
+
         </header>
 
-        
-     
+
+
         <nav class="nav">
 
             <div class="navigation">
@@ -50,85 +50,113 @@
 
 
 
-       
+
         <main class="contenido">
 
             <article class="articulo">
-                    
+
                 <div class="img_articulo">
                     <img src="./img/bochas.jpg" alt="Bochas" width="50%">
                 </div>
-                
+
                 <div class="texto">
                     <h1>Convertite en Socio del Club!</h1>
                     <p>Los requisitos para asociarte son mínimos, no necesitas nada más que tu dni (original y fotocopia), tener más de 18 años y pagar una cuota por adelantado de $5000 pesos (valor sujeto a cambios sin previo aviso).
                     <br><br>
-                    Te podés acercar a la sede del Club de lunes a viernes, de 9 a 13 y de 16 a 21 horas. Nuestros asesores te contarán todo sobre la institución. 
-                                       
+                    Te podés acercar a la sede del Club de lunes a viernes, de 9 a 13 y de 16 a 21 horas. Nuestros asesores te contarán todo sobre la institución.
+
                     </p>
                 </div>
-                
 
                 <div class="contenedor_form">
+                    <h1>Asociate On line</h1>
+                    <h3>Completá el formulario con tus datos y sé miembro del Club.</h3>
 
-                    <div class="formulario">      
-                        <h1>Asociate On line</h1>
-                        <h3>Completá el formulario con tus datos y sé miembro del Club.</h3>
-            
-            
-                        <form action="submeter-formulario.php" method="post">       
-            
-                        
-                            
-                            <label for="nombre" class="colocar_nombre">Nombre y apellido:
+
+                    <form action="" class="formulario" id="formulario" >
+
+                        <div class="form_grupo" id="grupo_nombre_apellido">
+                            <label for="nombre" class="form_label">Nombre y apellido:
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre y apellido">
-                            
-                          
-                            
-                            <label for="email" class="colocar_email">Email:
+                            <div class="grupo_input">
+                                <input type="text" class="form_input" name="nombre_apellido" id="nombre_apellido"  placeholder="Escribe tu nombre y apellido">
+                                <i class="form_validacion fi fi-br-check-circle"></i>
+                            </div>
+                            <p class="form_inputError">Ingrese solo letras</p>
+                        </div>
+
+
+                        <div class="form_grupo" id="grupo_email">
+                            <label for="email" class="form_label">Email:
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
-                            
-                        
-                            
-                            <label for="telefone" class="colocar_telefono">Teléfono:
+                            <div class="grupo_input">
+                                <input type="email" class="form_input" name="email" id="email" placeholder="Escribe tu Email">
+                                <i class="form_validacion fi fi-br-check-circle"></i>
+                            </div>
+                            <p class="form_inputError">Ingrese mail correctamente</p>
+                        </div>
+
+
+                        <div class="form_grupo" id="grupo_telefono">
+                            <label for="telefono" class="form_label">Teléfono:
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
-                                
-                                           
-                        
-                            <label for="documento" class="colocar_dni">Documento:
+                            <div class="grupo_input">
+                                <input type="tel" class="form_input" name="telefono" id="telefono" placeholder="Escribe tu teléfono">
+                                <i class="form_validacion fi fi-br-check-circle"></i>
+                            </div>
+                            <p class="form_inputError">Ingrese solo números</p>
+                        </div>
+
+
+
+                        <div class="form_grupo" id="grupo_dni">
+                            <label for="documento" class="form_label">Documento:
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="dni" name="introducir_dni" id="dni" placeholder="Escribe tu número de DNI">
-                                
-                          
-                            
-                            <label for="domicilio" class="colocar_domicilio">Domicilio:
+                            <div class="grupo_input">
+                                <input type="dni" class="form_input" name="dni" id="dni" placeholder="Escribe tu número de DNI">
+                                <i class="form_validacion fi fi-br-check-circle"></i>
+                            </div>
+                            <p class="form_inputError">Ingrese solo números</p>
+                        </div>
+
+
+                        <div class="form_grupo" id="grupo_domicilio">
+                            <label for="domicilio" class="form_label">Domicilio:
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="text" name="introducir_domicilio" id="assunto" required="obligatorio" placeholder="Escribe tu domicilio">
-                                
-                                      
-                            <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
-            
-                            <p class="aviso">
-                                <span class="obligatorio"> * </span>los campos son obligatorios.
-                            </p>          
-                        
-                        </form>
-                    </div>  
+                            <div class="grupo_input">
+                                <input type="text" class="form_input" name="domicilio" id="assunto" placeholder="Escribe tu domicilio">
+                                <i class="form_validacion fi fi-br-check-circle"></i>
+                            </div>
+                            <p class="form_inputError">Ingrese solo números y letras</p>
+                        </div>
+
+
+                        <p class="aviso">
+                            <span class="obligatorio"> * </span>los campos son obligatorios.
+                        </p>
+
+                        <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+
+                        <div class="submit_msj" id="submit_msj">
+                            <p class="msj_alerta" id="msj_alerta"><i class="fi fi-br-times-hexagon"></i><b> ERROR:</b> completa los campos correctamente.</p>
+                            <p class="msj_exito" id="msj_exito"><i class="fi fi-br-check-circle"></i> Registro creado exitosamente.</p>
+                         </div>
+
+
+                    </form>
                 </div>
+
             </article>
 
 
-                        
+
         </main>
-      
+
 
         <footer class="pie">
             <h3>HAY EQUIPO! Web Design - Codo a Codo - 2023</h3>
@@ -141,7 +169,7 @@
     </div>
 
 <!--JavaScript-->
-<script src="js/script.js"></script>
+<script src="./js/script.js"></script>
 
 </body>
 </html>

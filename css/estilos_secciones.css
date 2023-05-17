@@ -1,30 +1,31 @@
 /* importación de íconos de FlatIcon */
-@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'); /* info - footer */
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'); /* form - alerta/check */
+
 /* Importación de fuentes de google fonts */ 
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
 *{
     margin: 0;
     padding: 0;
-
 }
+
 body{
     background: rgb(230,230,230);
     color: #000;
     font-family: 'Kanit', sans-serif;
-
 }
 
+
 .contenedor{
-
-
     width: 90%;
-    max-width: 1200px; /*ancho máximo de la página*/
-    margin: 20px auto; /*auto permite centrar nuestra página en forma horizontal*/
+    max-width: 1200px; 
+    margin: 20px auto; 
     display: grid;
-    gap: 20px; /*nos ahorramos tenes que poner márgenes entre los elementos*/
+    gap: 20px; 
 
-    /*cantidad de columnas*/
+    /* cantidad de columnas - lo armé con 4 columnas porque la idea en un principio era agregar 
+    otros contenidos que el tiempo no permitió */
     grid-template-columns: repeat(4,1fr);
 
     /* filas: nav, header, contenido, footer*/
@@ -49,7 +50,6 @@ body{
     box-sizing: border-box;
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: -5px 2px 20px gray;
-
 }
 
 
@@ -156,67 +156,75 @@ body{
     border-radius: 10px;  
     padding: 2rem;
     background-color: #fbfbfb; 
-    border-color: #5444ab; 
+    border-color: #1e5b97; 
     border-style: solid; 
     border-width: 1px; 
     box-sizing: border-box;
     
 }
 
-.contenedor_form input{
+.contenedor_form h1{
+    font-size: 2.5rem;  
+    text-align: center; 
+    padding-bottom: 1rem; 
+    color: #1e5b97;
+ 
+}
+
+.contenedor_form h3{
+    font-size: 1.1rem; 
+    text-align: center;
+    padding-bottom: 0.5rem;
+    color: #0e0e0e;   
+}
+
+.form_grupo{
+    margin-bottom: 1.5rem;
+}
+
+.grupo_input{
+    position: relative;
+    margin-bottom: 0.1rem;
+}
+.form_input{
     background-color: #fbfbfb; 
     width: 100%;
     height: 2.2rem; 
     border-radius: 5px;  
     border-style: solid; 
     border-width: 1px; 
-    border-color: #5444ab; 
-    margin-top: 0.1rem;  
-    margin-bottom: 1.2rem; 
+    border-color: #1e5b97; 
+    margin: 0.1rem 0; 
     padding: 0.1rem 0.5rem;
     box-sizing: border-box;
 }
 
-
-
-.contenedor_form button{
-    width: 100%;  
-    padding: 0.5rem ;
-    margin: 0.8rem auto;
-    text-transform: uppercase;
-    background-color: #5444ab; 
-    border-color: #5444ab; 
-    border-style: solid; 
-    border-radius: 10px;  
-    cursor: pointer;
+.form_input:focus{
+    outline:0;
+    border: 3px solid #294fcc;
 }
 
-.contenedor_form button p{
+::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+
+.form_inputError{
     font-size: 0.8rem;
-    color: #fff; 
+    color: #bb2929;
+    display: none;
 }
 
-contenedor_form span{
-     color: #5444ab; 
+.form_inputError_activo{
+    display: block;
 }
 
-.contenedor_form .aviso{
-    font-size: 0.8rem;  
-    color: #0e0e0e;  
-}
-
-.contenedor_form h1{
-    font-size: 2.5rem;  
-    text-align: center; 
-    padding-bottom: 1rem; 
-    color: #5444ab;
- 
-}
-
-.contenedor_form h3{
-    font-size: 1.1rem; 
-    padding-bottom: 0.5rem;
-    color: #0e0e0e;   
+.form_validacion{
+    position: absolute;
+    right: 1rem;
+    bottom: 0.2rem;
+    z-index: 100;
+	font-size: 1.1rem;
+	opacity: 0;
 }
 
 .contenedor_form label{
@@ -224,15 +232,70 @@ contenedor_form span{
     color: #0e0e0e; 
 }
 
-::-webkit-input-placeholder {
-    color: #a8a8a8;
+.contenedor_form span{
+    color: #1e5b97; 
 }
 
-
-.formulario input:focus{
-    outline:0;
-    border: 1px solid #cc8529;
+.contenedor_form .aviso{
+   font-size: 0.8rem;  
+   color: #0e0e0e;  
 }
+
+.contenedor_form button{
+    width: 100%;  
+    padding: 0.5rem ;
+    margin: 0.8rem auto;
+    text-transform: uppercase;
+    background-color: #1e5b97; 
+    border-color: #1e5b97; 
+    border-style: solid; 
+    border-radius: 10px;  
+    cursor: pointer;
+}
+
+.contenedor_form button p{
+    margin: 0;
+    font-size: 0.8rem;
+    color: #fff; 
+}
+
+.submit_msj{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 3px;
+    margin: 0.2rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.submit_msj .msj_alerta{
+    background: #e7af14;
+    display: none;
+}
+
+.submit_msj .msj_exito{
+    background: #5ef140;
+    display: none;
+}
+
+.submit_msj .msj_alerta_activo{
+    display: block;
+}
+.submit_msj .msj_exito_activo{
+    display: block;
+}
+
+/* ---- FORM Validación ---*/
+.form_grupo_correcto .form_validacion{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.form_grupo_incorrecto .form_validacion{
+    color: #bb2929;
+    opacity: 1;
+}
+
 
 
 /* ------ estilo footer --------*/
@@ -303,6 +366,9 @@ contenedor_form span{
 
     .contenedor .contenido .articulo .contenedor_form{
         width: 90%;
+    }
+    .form_validacion{
+        margin: 0;
     }
 }
 

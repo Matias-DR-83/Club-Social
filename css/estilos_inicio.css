@@ -18,9 +18,10 @@ body{
 
     width: 90%;
     max-width: 1200px; /*ancho máximo de la página*/
-    margin: 20px auto; /*auto permite centrar nuestra página en forma horizontal*/
+    margin: 0.3rem auto; /*auto permite centrar nuestra página en forma horizontal*/
     display: grid;
-    gap: 20px; /*nos ahorramos tenes que poner márgenes entre los elementos*/
+    /*nos ahorramos tenes que poner márgenes entre los elementos*/
+    gap: 0.1rem;
 
     /*cantidad de columnas*/
     grid-template-columns: repeat(4,1fr);
@@ -47,7 +48,7 @@ body{
     box-sizing: border-box;
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: -5px 2px 20px gray;
-    
+
 }
 
 
@@ -67,38 +68,47 @@ body{
     width: 8%;
     display: flex;
     align-items: center;
+}
 
+.contenedor .encabezado h3{
+    text-align: center;
+    width: 100%;
 }
 
 /* ----- estilo nav ---- */
 .contenedor .nav{
+    height: 2rem;
     background: #0b2239;
     color: #fff;
     grid-area: nav;
-
     display: inline;
     text-align: center;
-}
+    padding: 0%;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
 
 
+ }
 
 /* --- estilo de lista ---- */
 
 .contenedor .nav ul li{
     display: inline;
     font-weight: 600;
-    padding:  0.5rem;
 }
 
 .contenedor .nav ul li a{
     text-decoration: none;
     color: #fff;
     text-align: center;
+    line-height: 2rem;
+    margin: 0;
+    padding: 0 0.5rem;
 }
 
 .nav ul li:hover{
-    background: rgb(155, 133, 219);
-    
+    background: rgb(54, 93, 121);
+
 }
 
 
@@ -108,6 +118,8 @@ body{
     background: #fff;
     display: block;
     grid-area: contenido;
+    padding: 2rem 1.5rem;
+    margin-bottom: 0.5rem;
 
 }
 
@@ -130,7 +142,7 @@ body{
 .contenedor .contenido .articulo img{
     object-fit: cover;
     width: 100%;
-}    
+}
 /* ---- aplico transformación con efecto zoom en las img ----*/
 .contenedor .contenido .articulo img:hover{
     transition: all .5s ease-in;
@@ -158,10 +170,13 @@ body{
     color: #fff;
     text-align: center;
     grid-area: pie;
+    font-size: 0.8rem;
 }
 /* ---------- iconos --------- */
+
 .contenedor .pie ul i{
     padding: 0.5rem;
+    font-size: 1.2rem
 }
 .contenedor .pie ul i:hover{
     cursor: pointer;
@@ -172,12 +187,9 @@ body{
 
 @media screen and (max-width: 768px){
 
-    *{
-        margin-bottom: 0.5rem;
-    }
-
     .contenedor{
         display: block;
+        
         /*2 columnas: contenido  */
         grid-template-columns: repeat(2,1fr);
 
@@ -187,15 +199,15 @@ body{
                              "pie pie";
     }
 
+
     .contenedor .nav{
+        margin-top: 0.1rem;
         display: flex;
         justify-content: center;
-
-
     }
-    
-    
-    /* -----*/ 
+
+
+    /* -----*/
 
     .contenedor .contenido .articulo{
         width: 90%;
@@ -206,7 +218,7 @@ body{
         width: 100%;
         height: 100%;
     }
-    
+
     .contenedor .contenido .articulo .texto{
         width: 100%;
     }
@@ -219,9 +231,9 @@ body{
 
 @media screen and (max-width: 450px){
 
-    *{
+    /* *{
         margin-bottom: 0.5rem;
-    }
+    } */
 
     .contenedor{
         display: block;
@@ -234,12 +246,16 @@ body{
                              "pie";
     }
 
+    .contenedor .encabezado h3{
+        font-size: 1.3rem;
+    }
     .contenedor .encabezado .logo{
         display: none;
     }
 
     .contenedor .nav{
         display: block;
+        height: auto;
     }
 
 
@@ -250,7 +266,7 @@ body{
     }
 
 
-    /* -----*/ 
+    /* -----*/
 
     .contenedor .contenido .articulo{
         width: 90%;
@@ -262,7 +278,7 @@ body{
         width: 100%;
         height: 100%;
     }
-    
+
     .contenedor .contenido .articulo .texto{
         width: 100%;
     }
