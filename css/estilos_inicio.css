@@ -16,14 +16,17 @@ body{
 .contenedor{
 
 
-    width: 90%;
-    max-width: 1200px; /*ancho máximo de la página*/
-    margin: 0.3rem auto; /*auto permite centrar nuestra página en forma horizontal*/
+    width: 96%;
+    max-width: 1300px; 
     display: grid;
-    /*nos ahorramos tenes que poner márgenes entre los elementos*/
+    
     gap: 0.1rem;
-
-    /*cantidad de columnas*/
+    margin: 0.3rem auto; 
+    box-sizing: border-box;
+    
+    
+    /* cantidad de columnas - lo armé con 4 columnas porque la idea en un principio era agregar
+    otros contenidos que el tiempo no permitió */
     grid-template-columns: repeat(4,1fr);
 
     /* filas: nav, header, contenido, footer*/
@@ -62,12 +65,17 @@ body{
     text-align: center;
     grid-area: encabezado;
     display: flex;
+    align-items: center;
 }
 
 .contenedor .encabezado .logo{
-    width: 8%;
+    width: 10%;
     display: flex;
     align-items: center;
+}
+.logo img{
+    width: 100%;
+    border-radius: 3px;
 }
 
 .contenedor .encabezado h3{
@@ -114,17 +122,26 @@ body{
 
 
 /* ------------------- estilo de main  ------------------- */
+
 .contenedor .contenido{
     background: #fff;
     display: block;
     grid-area: contenido;
     padding: 2rem 1.5rem;
     margin-bottom: 0.5rem;
+}
 
+.contenido .guarda_inicio{
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.guarda_inicio img{
+    object-fit: cover;
+    width: 100%;
 }
 
 .contenedor .contenido .articulo{
-    overflow: hidden;
     margin: 0.5rem 1rem 2.5rem 1rem;
     text-align: justify;
     box-sizing: border-box;
@@ -132,19 +149,21 @@ body{
     gap: 3%;
 }
 
-.contenedor .contenido .articulo .img_articulo{
+.contenedor .contenido .articulo .contenedor_img_articulo{
     width: 50%;
-    height: 100%;
     overflow: hidden;
 }
 
 
-.contenedor .contenido .articulo img{
+.contenedor .contenido .articulo .img_articulo{
     object-fit: cover;
     width: 100%;
+    height: 100%;
+    margin-top: 0.6rem;
+    
 }
-/* ---- aplico transformación con efecto zoom en las img ----*/
-.contenedor .contenido .articulo img:hover{
+/* ---- transformación con efecto zoom en las img ----*/
+.contenedor .contenido .articulo .img_articulo:hover{
     transition: all .5s ease-in;
     transform: scale(1.1);
 }
@@ -152,15 +171,8 @@ body{
 
 .contenedor .contenido .articulo .texto{
     width: 50%;
-}
 
-.contenido .articulo iframe{
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
-
 
 
 /* ---------------- estilo footer ------------------*/
@@ -174,6 +186,13 @@ body{
 }
 /* ---------- iconos --------- */
 
+.contenedor .pie ul li{
+    display: inline
+}
+.contenedor .pie ul li a{
+    text-decoration: none;
+    color: #fff;
+}
 .contenedor .pie ul i{
     padding: 0.5rem;
     font-size: 1.2rem
@@ -231,11 +250,12 @@ body{
 
 @media screen and (max-width: 450px){
 
-    /* *{
-        margin-bottom: 0.5rem;
-    } */
 
     .contenedor{
+        
+        width: 99%;
+        margin: 0 auto;
+        padding: 0%;
         display: block;
 
 
@@ -247,7 +267,7 @@ body{
     }
 
     .contenedor .encabezado h3{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     .contenedor .encabezado .logo{
         display: none;
@@ -262,11 +282,15 @@ body{
     .contenedor .nav ul li{
         display: block;
         text-align: center;
-
+        font-size: 0.8rem;
     }
 
 
     /* -----*/
+
+    .contenedor .contenido{
+        padding: 1%;
+    }
 
     .contenedor .contenido .articulo{
         width: 90%;

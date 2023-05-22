@@ -3,8 +3,8 @@
 // <i class="fi fi-br-times-hexagon"></i>  incorrecto
 // <i class="fi fi-br-fi-br-check-circle"></i>    correcto
 
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
+
+// *** FORMULARIO ***
 
 const campos = {
     nombre_apellido : false,
@@ -96,3 +96,6 @@ formulario.addEventListener('submit', (e) => {
         }, 5000);
     }
 });
+
+
+

@@ -2,7 +2,7 @@
 @import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'); /* info - footer */
 @import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'); /* form - alerta/check */
 
-/* Importación de fuentes de google fonts */ 
+/* Importación de fuentes de google fonts */
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
 *{
@@ -18,13 +18,13 @@ body{
 
 
 .contenedor{
-    width: 90%;
-    max-width: 1200px; 
-    margin: 20px auto; 
+    width: 96%;
+    max-width: 1300px;
     display: grid;
-    gap: 20px; 
+    gap: 0.1rem;
+    margin: 0.3rem auto; 
 
-    /* cantidad de columnas - lo armé con 4 columnas porque la idea en un principio era agregar 
+    /* cantidad de columnas - lo armé con 4 columnas porque la idea en un principio era agregar
     otros contenidos que el tiempo no permitió */
     grid-template-columns: repeat(4,1fr);
 
@@ -63,46 +63,60 @@ body{
     text-align: center;
     grid-area: encabezado;
     display: flex;
+    align-items: center;
 }
 
 .contenedor .encabezado .logo{
-    width: 8%;
+    width: 10%;
     display: flex;
     align-items: center;
-
 }
+.logo img{
+    width: 100%;
+    border-radius: 3px;
+}
+
+.contenedor .encabezado h3{
+    text-align: center;
+    width: 100%;
+}
+
 
 /* ----- estilo nav ---- */
 .contenedor .nav{
+    height: 2rem;
     background: #0b2239;
     color: #fff;
     grid-area: nav;
-
     display: inline;
     text-align: center;
-}
+    padding: 0%;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
 
 
+ }
 
 /* --- estilo de lista ---- */
 
 .contenedor .nav ul li{
     display: inline;
     font-weight: 600;
-    padding:  0.5rem;
-}
-.nav ul li:hover{
-    background: grey;
 }
 
 .contenedor .nav ul li a{
     text-decoration: none;
     color: #fff;
     text-align: center;
+    line-height: 2rem;
+    margin: 0;
+    padding: 0 0.5rem;
 }
 
+.nav ul li:hover{
+    background: rgb(54, 93, 121);
 
-
+}
 
 /* ------------------- estilo de main  ------------------- */
 .contenedor .contenido{
@@ -111,14 +125,18 @@ body{
     grid-area: contenido;
     gap: 5%;
     padding: 3%;
+    margin-bottom: 0.5rem;
 
 }
 
 .contenedor .contenido .articulo{
     overflow: hidden;
-    margin: 0.5rem 1rem 2.5rem 1rem;
+    margin: 0 auto 2.5rem auto;
     box-sizing: border-box;
     display: block;
+    /*--*/
+    width: 100%;
+    box-sizing: border-box;
 
 }
 
@@ -127,7 +145,7 @@ body{
     justify-content: center;
 }
 .contenedor .contenido .articulo img{
-    width: 80%;
+    width: 100%;
 
 }
 
@@ -138,6 +156,10 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.texto h1{
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
 
 .contenido .articulo iframe{
     width: 60%;
@@ -146,36 +168,104 @@ body{
     margin-right: auto;
 }
 
+/* -------------------------- estilo Info --------------*/
 
+.equipo{
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0.5rem;
+   
+}
+
+.equipo h2{
+    margin-bottom: 2rem;
+}
+
+.equipo .caja_integrantes{
+    width: 98%;
+    background-color: rgb(241, 237, 237);
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: -2px 1px 15px rgb(160, 159, 159);
+    box-sizing: border-box;
+}
+
+.equipo .contenedor_integrantes{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.equipo .integrante{
+     background-color: #7a7878;
+     border-radius: 10px;
+     overflow: hidden;
+     margin: 1.5rem;
+     box-shadow: -5px 2px 20px gray;
+}
+
+.equipo .integrante p{
+    margin: 0.5rem 0;
+    color: white;
+}
+
+/* ----  autoridades ---- */
+
+.equipo #integrante_autoridades{
+    /* width: 100%; */
+    margin: 1.5rem 1rem;
+    padding:  0.1rem 1rem;
+    overflow: hidden;
+}
+
+
+/* ------------ galeria seccion historia -------- */
+
+.articulo .galeria_contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 25rem;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 80%;
+
+}
+.articulo .galeria_contenedor .galeria_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
 /* -------------------- estilo formulario ---------------*/
 
-.contenedor_form{  
+.contenedor_form{
     width: 70%;
     height: auto;
-    margin: 2rem auto;
-    border-radius: 10px;  
+    margin: 1rem auto;
+    border-radius: 10px;
     padding: 2rem;
-    background-color: #fbfbfb; 
-    border-color: #1e5b97; 
-    border-style: solid; 
-    border-width: 1px; 
+    background-color: #fbfbfb;
+    border-color: #1e5b97;
+    border-style: solid;
+    border-width: 1px;
     box-sizing: border-box;
-    
+
 }
 
 .contenedor_form h1{
-    font-size: 2.5rem;  
-    text-align: center; 
-    padding-bottom: 1rem; 
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
     color: #1e5b97;
- 
+
 }
 
 .contenedor_form h3{
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
     text-align: center;
     padding-bottom: 0.5rem;
-    color: #0e0e0e;   
+    color: #0e0e0e;
 }
 
 .form_grupo{
@@ -187,14 +277,14 @@ body{
     margin-bottom: 0.1rem;
 }
 .form_input{
-    background-color: #fbfbfb; 
+    background-color: #fbfbfb;
     width: 100%;
-    height: 2.2rem; 
-    border-radius: 5px;  
-    border-style: solid; 
-    border-width: 1px; 
-    border-color: #1e5b97; 
-    margin: 0.1rem 0; 
+    height: 2.2rem;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1e5b97;
+    margin: 0.1rem 0;
     padding: 0.1rem 0.5rem;
     box-sizing: border-box;
 }
@@ -228,35 +318,35 @@ body{
 }
 
 .contenedor_form label{
-    font-size: 1rem; 
-    color: #0e0e0e; 
+    font-size: 1rem;
+    color: #0e0e0e;
 }
 
 .contenedor_form span{
-    color: #1e5b97; 
+    color: #1e5b97;
 }
 
 .contenedor_form .aviso{
-   font-size: 0.8rem;  
-   color: #0e0e0e;  
+   font-size: 0.8rem;
+   color: #0e0e0e;
 }
 
 .contenedor_form button{
-    width: 100%;  
+    width: 100%;
     padding: 0.5rem ;
     margin: 0.8rem auto;
     text-transform: uppercase;
-    background-color: #1e5b97; 
-    border-color: #1e5b97; 
-    border-style: solid; 
-    border-radius: 10px;  
+    background-color: #3a9cb7;
+    border-color: #3a9cb7;
+    border-style: solid;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .contenedor_form button p{
     margin: 0;
     font-size: 0.8rem;
-    color: #fff; 
+    color: #fff;
 }
 
 .submit_msj{
@@ -305,26 +395,32 @@ body{
     color: #fff;
     text-align: center;
     grid-area: pie;
+    font-size: 0.8rem;
 }
 
-.contenedor .pie .iconos{
-    margin: 0.5rem;
-}
+/* ---------- iconos --------- */
 
+.contenedor .pie ul li{
+    display: inline
+}
+.contenedor .pie ul li a{
+    text-decoration: none;
+    color: #fff;
+}
 .contenedor .pie ul i{
     padding: 0.5rem;
+    font-size: 1.2rem
 }
 .contenedor .pie ul i:hover{
     cursor: pointer;
 }
 
+
+
 /* ------------------------------------- BREACKPOINTS -------------------------------------- */
 
 @media screen and (max-width: 768px){
 
-    *{
-        margin-bottom: 0.5rem;
-    }
 
     .contenedor{
         display: block;
@@ -338,28 +434,27 @@ body{
     }
 
     .contenedor .nav{
+        margin-top: 0.1rem;
         display: flex;
         justify-content: center;
-
-
     }
 
 
     /* -----*/
 
     .contenedor .contenido .articulo{
-        width: 90%;
+        width: 100%;
         display: block;
     }
 
     .contenedor .contenido .articulo img{
-        width: 95%;
+        width: 100%;
     }
 
     .contenedor .contenido .articulo .texto{
         width: 90%;
     }
-    
+
     .contenedor .contenido .articulo iframe{
         width: 80%;
     }
@@ -370,6 +465,23 @@ body{
     .form_validacion{
         margin: 0;
     }
+
+    /* ---- integrantes --- */
+
+    .equipo .contenedor_integrantes{
+        display: block;
+    }
+    .equipo .integrante{
+        justify-content: center;
+    }
+    
+    .articulo .galeria_contenedor{
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        width: 95%;
+   
+    }
+
 }
 
 
@@ -378,12 +490,12 @@ body{
 
 @media screen and (max-width: 450px){
 
-    *{
-        margin-bottom: 0.5rem;
-    }
 
     .contenedor{
         display: block;
+        width: 99%;
+        margin: 0 auto;
+        padding: 0%;
 
 
         grid-template-areas:
@@ -393,26 +505,34 @@ body{
                              "pie";
     }
 
+    .contenedor .encabezado h3{
+        font-size: 1.2rem;
+    }
     .contenedor .encabezado .logo{
         display: none;
     }
 
     .contenedor .nav{
         display: block;
+        height: auto;
     }
 
 
     .contenedor .nav ul li{
         display: block;
         text-align: center;
-
+        font-size: 0.8rem;
     }
 
 
     /* -----*/
 
+    .contenedor .contenido{
+        padding: 1%;
+    }
+
     .contenedor .contenido .articulo{
-        width: 90%;
+        width: 100%;
         display: block;
     }
 
@@ -431,6 +551,14 @@ body{
 
     .contenedor .contenido .articulo .contenedor_form{
         width: 100%;
+    }
+
+    .articulo .galeria_contenedor{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 25rem;
+        width: 90%;
+   
     }
 }
 
