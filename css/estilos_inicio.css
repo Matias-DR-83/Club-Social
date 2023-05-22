@@ -17,27 +17,14 @@ body{
 
 
     width: 96%;
-    max-width: 1300px; 
+    max-width: 1300px;
     display: grid;
-    
+
     gap: 0.1rem;
-    margin: 0.3rem auto; 
+    margin: 0.3rem auto;
     box-sizing: border-box;
-    
-    
-    /* cantidad de columnas - lo armé con 4 columnas porque la idea en un principio era agregar
-    otros contenidos que el tiempo no permitió */
-    grid-template-columns: repeat(4,1fr);
 
-    /* filas: nav, header, contenido, footer*/
-    grid-template-rows: auto;
-
-    grid-template-areas: "encabezado encabezado encabezado encabezado"
-                         "nav nav nav nav"
-                         "contenido contenido contenido contenido"
-                         "pie pie pie pie";
-
-
+    grid-template-columns: 1fr;
 }
 
 
@@ -63,9 +50,9 @@ body{
     font-weight: 900;
     font-size:xx-large;
     text-align: center;
-    grid-area: encabezado;
     display: flex;
     align-items: center;
+
 }
 
 .contenedor .encabezado .logo{
@@ -88,7 +75,6 @@ body{
     height: 2rem;
     background: #0b2239;
     color: #fff;
-    grid-area: nav;
     display: inline;
     text-align: center;
     padding: 0%;
@@ -126,9 +112,9 @@ body{
 .contenedor .contenido{
     background: #fff;
     display: block;
-    grid-area: contenido;
     padding: 2rem 1.5rem;
     margin-bottom: 0.5rem;
+
 }
 
 .contenido .guarda_inicio{
@@ -142,7 +128,7 @@ body{
 }
 
 .contenedor .contenido .articulo{
-    margin: 0.5rem 1rem 2.5rem 1rem;
+    margin: 0.5rem auto 2.5rem auto;
     text-align: justify;
     box-sizing: border-box;
     display:  flex;
@@ -160,7 +146,7 @@ body{
     width: 100%;
     height: 100%;
     margin-top: 0.6rem;
-    
+
 }
 /* ---- transformación con efecto zoom en las img ----*/
 .contenedor .contenido .articulo .img_articulo:hover{
@@ -181,8 +167,8 @@ body{
     background: #0b2239;
     color: #fff;
     text-align: center;
-    grid-area: pie;
     font-size: 0.8rem;
+
 }
 /* ---------- iconos --------- */
 
@@ -208,14 +194,7 @@ body{
 
     .contenedor{
         display: block;
-        
-        /*2 columnas: contenido  */
-        grid-template-columns: repeat(2,1fr);
 
-        grid-template-areas: "encabezado encabezado"
-                             "nav nav"
-                             "articulo articulo"
-                             "pie pie";
     }
 
 
@@ -233,9 +212,13 @@ body{
         display: block;
     }
 
-    .contenedor .contenido .articulo .img_articulo{
+    .contenedor .contenido .articulo .contenedor_img_articulo{
         width: 100%;
-        height: 100%;
+ 
+    }
+
+    contenedor .contenido .articulo .img_articulo{
+        width: 100%;
     }
 
     .contenedor .contenido .articulo .texto{
@@ -252,18 +235,12 @@ body{
 
 
     .contenedor{
-        
+
         width: 99%;
         margin: 0 auto;
         padding: 0%;
         display: block;
 
-
-        grid-template-areas:
-                             "encabezado"
-                             "nav"
-                             "contenido"
-                             "pie";
     }
 
     .contenedor .encabezado h3{
@@ -298,9 +275,9 @@ body{
     }
 
     /* -- */
-    .contenedor .contenido .articulo .img_articulo{
+    .contenedor .contenido .articulo .contenedor_img_articulo{
         width: 100%;
-        height: 100%;
+ 
     }
 
     .contenedor .contenido .articulo .texto{
