@@ -500,6 +500,7 @@ body{
         display: block;
         text-align: center;
         font-size: 0.8rem;
+        border-bottom: 1px solid #2a3863;
     }
 
 

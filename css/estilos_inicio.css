@@ -70,6 +70,13 @@ body{
     width: 100%;
 }
 
+/* --- menu hamburguesa -- */
+#menu, #menu-check{
+    display: none;
+}
+
+
+
 /* ----- estilo nav ---- */
 .contenedor .nav{
     height: 2rem;
@@ -240,18 +247,53 @@ body{
         margin: 0 auto;
         padding: 0%;
         display: block;
-
     }
 
-    .contenedor .encabezado h3{
-        font-size: 1.2rem;
+    .contenedor .encabezado{
+        /* position: fixed; */
+        font-size: 0.8rem;
     }
+
     .contenedor .encabezado .logo{
         display: none;
     }
 
-    .contenedor .nav{
+    /* --- menu hamburguesa -- */
+    #menu{
+        display: flex;
+        border: 1px solid;
+        border-radius: 4px;
+        font-size: 1rem;
+        width: 1rem;
+        position: absolute;
+        top: 0.8rem;
+        right: 1rem;
+        justify-content: center;
+    }
+
+    #menu-cerrar{
+        display: none;
+    }
+
+    #menu-check:not(:checked) ~ .navigation {
+        display: none;
+    }
+    #menu-check:checked ~ .navigation {
         display: block;
+    }
+
+    #menu-check:checked ~ label #menu-abrir {
+        display: none;
+    }    
+    #menu-check:checked ~ label #menu-cerrar {
+        display: block;
+    }  
+
+
+    /* -- */
+
+    .contenedor .nav{
+        /* position: fixed; */
         height: auto;
     }
 
@@ -260,6 +302,7 @@ body{
         display: block;
         text-align: center;
         font-size: 0.8rem;
+        border-bottom: 1px solid #2a3863;
     }
 
 
