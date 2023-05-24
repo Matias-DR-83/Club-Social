@@ -6,6 +6,9 @@
 
 // *** FORMULARIO ***
 
+const inputs = document.querySelectorAll('#formulario input');
+const formulario = document.querySelector('#formulario');
+
 const campos = {
     nombre_apellido : false,
     email : false,
@@ -75,6 +78,10 @@ formulario.addEventListener('submit', (e) => {
     if (campos.nombre_apellido && campos.email && campos.telefono && campos.dni && campos.domicilio){
    
         formulario.reset();
+        //limpia los campos para que no queden en true después de hacer un envío correcto
+        Object.entries(campos).forEach(([key, val]) => {
+            campos[key] = false;
+        });
         
         document.getElementById('msj_exito').classList.add('msj_exito_activo');
         

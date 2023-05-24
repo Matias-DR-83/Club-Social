@@ -95,7 +95,6 @@ body{
 
 .contenedor .nav ul li{
     display: inline;
-    font-weight: 600;
 }
 
 .contenedor .nav ul li a{
@@ -243,58 +242,39 @@ body{
 
     .contenedor{
 
-        width: 99%;
+        width: 100%;
         margin: 0 auto;
         padding: 0%;
         display: block;
     }
 
     .contenedor .encabezado{
-        /* position: fixed; */
         font-size: 0.8rem;
+        position: fixed;
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        border-bottom: 2px solid #fff;
     }
 
     .contenedor .encabezado .logo{
         display: none;
     }
 
-    /* --- menu hamburguesa -- */
-    #menu{
-        display: flex;
-        border: 1px solid;
-        border-radius: 4px;
-        font-size: 1rem;
-        width: 1rem;
-        position: absolute;
-        top: 0.8rem;
-        right: 1rem;
-        justify-content: center;
-    }
-
-    #menu-cerrar{
-        display: none;
-    }
-
-    #menu-check:not(:checked) ~ .navigation {
-        display: none;
-    }
-    #menu-check:checked ~ .navigation {
-        display: block;
-    }
-
-    #menu-check:checked ~ label #menu-abrir {
-        display: none;
-    }    
-    #menu-check:checked ~ label #menu-cerrar {
-        display: block;
-    }  
-
-
-    /* -- */
+    /* -----*/
 
     .contenedor .nav{
-        /* position: fixed; */
-        height: auto;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+         background: #0b2239;
+        /* background: none; */
+        padding-top: 3.5rem;
+        opacity: 0.95;
+        margin: 0;
+        box-shadow: none;
+
     }
 
 
@@ -303,13 +283,54 @@ body{
         text-align: center;
         font-size: 0.8rem;
         border-bottom: 1px solid #2a3863;
+        width: 15rem;
     }
 
+    .contenedor .nav ul li a{
+        color: #fff;
+        opacity: 1;
+    }
 
-    /* -----*/
+        /* --- menu hamburguesa -- */
+    .nav #menu{
+            display: flex;
+            border: 1px solid;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 1rem;
+            position: absolute;
+            top: 0.8rem;
+            right: 1rem;
+            justify-content: center;
+            z-index: 999;
+
+        }
+    
+        #menu-cerrar{
+            display: none;
+        }
+    
+        #menu-check:not(:checked) ~ .navigation {
+            display: none;
+        }
+        #menu-check:checked ~ .navigation {
+            display: block;
+        }
+    
+        #menu-check:checked ~ label #menu-abrir {
+            display: none;
+        }    
+        #menu-check:checked ~ label #menu-cerrar {
+            display: block;
+        }  
+    
+    
+        /* ------ */
+
 
     .contenedor .contenido{
         padding: 1%;
+        padding-top: 4rem;  /* agrego este padding para que el contenido no quede oculto atras del header*/
     }
 
     .contenedor .contenido .articulo{
